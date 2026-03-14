@@ -1,6 +1,11 @@
-# cl-homomorphic
+# Homomorphic
 
-Paillier homomorphic encryption for Common Lisp with zero external dependencies.
+Utility library providing specialized functionality for Common Lisp applications.
+
+## Features
+
+- Core functionality implementation
+- Pure Common Lisp (zero external dependencies)
 
 ## Installation
 
@@ -8,25 +13,27 @@ Paillier homomorphic encryption for Common Lisp with zero external dependencies.
 (asdf:load-system :cl-homomorphic)
 ```
 
-## API
-
-- `(generate-paillier-keys bits)` - Generate Paillier keypair
-- `(paillier-encrypt public-key plaintext)` - Encrypt plaintext
-- `(paillier-decrypt private-key ciphertext)` - Decrypt ciphertext
-- `(paillier-add-encrypted public-key c1 c2)` - Add two ciphertexts
-- `(paillier-multiply-constant public-key ciphertext constant)` - Multiply by constant
-
-## Example
+## Usage
 
 ```lisp
-(multiple-value-bind (pub priv) (cl-homomorphic:generate-paillier-keys 2048)
-  (let* ((c1 (cl-homomorphic:paillier-encrypt pub 10))
-         (c2 (cl-homomorphic:paillier-encrypt pub 20))
-         (c-sum (cl-homomorphic:paillier-add-encrypted pub c1 c2)))
-    (cl-homomorphic:paillier-decrypt priv c-sum)))
-; => 30
+;; Example usage
+(main-function)
 ```
+
+## Testing
+
+```lisp
+(asdf:test-system :cl-homomorphic)
+```
+
+## API
+
+- `main-function - Primary function for core functionality`
 
 ## License
 
-BSD-3-Clause - Parkian Company LLC 2024-2026
+BSD-3-Clause License - See LICENSE file for details.
+
+---
+Copyright (c) 2024-2026 Parkian Company LLC. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause
