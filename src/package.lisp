@@ -6,7 +6,10 @@
 
 (defpackage #:cl-homomorphic
   (:use #:cl)
-  (:export #:generate-paillier-keys
+  (:export
+   #:with-homomorphic-timing
+   #:homomorphic-batch-process
+   #:homomorphic-health-check#:generate-paillier-keys
            #:paillier-encrypt
            #:paillier-decrypt
            #:paillier-add-encrypted

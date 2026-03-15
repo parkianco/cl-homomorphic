@@ -6,13 +6,16 @@
 
 (asdf:defsystem #:cl-homomorphic
   :description "Paillier homomorphic encryption"
-  :author "Parkian Company LLC"
+  :author "Park Ian Co"
   :license "Apache-2.0"
   :version "0.1.0"
   :serial t
   :components ((:file "package")
                (:module "src"
-                :components ((:file "paillier")))))
+                :components ((:file "package")
+                             (:file "conditions" :depends-on ("package"))
+                             (:file "types" :depends-on ("package"))
+                             (:file "cl-homomorphic" :depends-on ("package" "conditions" "types")))))))
 
 (asdf:defsystem #:cl-homomorphic/test
   :description "Tests for cl-homomorphic"
