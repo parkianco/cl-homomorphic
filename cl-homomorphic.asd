@@ -15,7 +15,8 @@
                 :components ((:file "package")
                              (:file "conditions" :depends-on ("package"))
                              (:file "types" :depends-on ("package"))
-                             (:file "cl-homomorphic" :depends-on ("package" "conditions" "types")))))))
+                             (:file "paillier" :depends-on ("package"))
+                             (:file "cl-homomorphic" :depends-on ("package" "conditions" "types" "paillier")))))))
 
 (asdf:defsystem #:cl-homomorphic/test
   :description "Tests for cl-homomorphic"
