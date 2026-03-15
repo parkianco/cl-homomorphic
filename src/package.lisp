@@ -7,7 +7,11 @@
 (defpackage #:cl-homomorphic
   (:use #:cl)
   (:export
-   #:with-homomorphic-timing
+   #:identity-list
+   #:flatten
+   #:map-keys
+   #:now-timestamp
+#:with-homomorphic-timing
    #:homomorphic-batch-process
    #:homomorphic-health-check#:generate-paillier-keys
            #:paillier-encrypt
